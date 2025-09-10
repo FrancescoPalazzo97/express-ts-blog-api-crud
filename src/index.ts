@@ -2,13 +2,14 @@ import express from "express";
 const app = express();
 const port = 3000;
 
-import { posts } from './data/posts';
+import posts from './data/posts';
+
+import postsRouter from './routers/postsRouter';
 
 app.use(express.static('public'));
+app.use(express.json());
 
-app.use('/bacheca', (req, res) => {
-    res.json(posts);
-})
+app.use('/bacheca', postsRouter);
 
 app.get('/', (req, res) => {
     res.send('Benvenuto sul mio server scritto in TypeScript!');

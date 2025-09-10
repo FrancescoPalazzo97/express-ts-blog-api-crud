@@ -1,12 +1,6 @@
-type PostType = {
-    id: number,
-    title: string,
-    content: string,
-    image: string,
-    tags: string[]
-}
+import { PostType } from "../lib/types";
 
-export const posts: PostType[] = [
+const posts: PostType[] = [
     {
         id: 1,
         title: "Ciambellone",
@@ -51,3 +45,5 @@ export const posts: PostType[] = [
         tags: ["Dolci", "Dolci al cioccolato", "Torte", "Ricette vegetariane", "Ricette al forno"],
     },
 ];
+
+export default posts;
