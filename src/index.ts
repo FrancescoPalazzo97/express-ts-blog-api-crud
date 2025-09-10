@@ -10,7 +10,7 @@ app.use('/bacheca', (req, res) => {
     res.json(posts);
 })
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Benvenuto sul mio server scritto in TypeScript!');
 });
 
