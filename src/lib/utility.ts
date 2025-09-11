@@ -17,7 +17,17 @@ export const guardType = () => {
         )
     }
 
+    const isError = (data: unknown): data is { message: string } => {
+        return (
+            data !== null
+            && typeof data === 'object'
+            && 'message' in data
+            && data.message === 'string'
+        );
+    };
+
     return {
-        isPost
+        isPost,
+        isError
     }
-}
+};
